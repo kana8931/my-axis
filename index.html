@@ -159,7 +159,7 @@ input[type=range].body::-webkit-slider-thumb{border-color:var(--warm-dark);}
 .act-page-title{font-family:'Shippori Mincho',serif;font-size:17px;font-weight:500;line-height:1.6;position:relative;z-index:1;}
 .act-radar-card{margin:0 24px 18px;padding:20px;background:white;border-radius:20px;box-shadow:0 2px 18px var(--shadow);}
 .act-radar-inner{display:flex;align-items:center;gap:16px;}
-.act-radar-svg{width:140px;height:140px;flex-shrink:0;}
+.act-radar-svg{width:160px;height:160px;flex-shrink:0;}
 .act-radar-legend{flex:1;display:flex;flex-direction:column;gap:9px;}
 .act-rl-item{display:flex;flex-direction:column;gap:3px;}
 .act-rl-meta{display:flex;justify-content:space-between;}
@@ -518,51 +518,53 @@ input[type=range].body::-webkit-slider-thumb{border-color:var(--warm-dark);}
     <div class="logo">ACT<span>価値観マップ</span></div>
     <div class="date-badge" id="dateBadge4"></div>
   </div>
-  <div class="act-page-header">
-    <div class="act-page-label">RUSS HARRIS — ACT VALUE MAP</div>
-    <div class="act-page-title">4つの領域で<br>自分の価値観を明確にする</div>
-  </div>
-  <div class="section-row"><div class="section-title">今月のバランス</div></div>
+
+  <div class="section-row"><div class="section-title">今月のバランス</div><div style="font-size:11px;color:var(--text-light);letter-spacing:0.05em;">数値をタップして編集</div></div>
   <div class="act-radar-card">
     <div class="act-radar-inner">
-      <svg class="act-radar-svg" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="70,10 130,70 70,130 10,70" fill="none" stroke="#EDE7DC" stroke-width="1"/>
-        <polygon points="70,28 112,70 70,112 28,70" fill="none" stroke="#EDE7DC" stroke-width="1"/>
-        <polygon points="70,46 94,70 70,94 46,70" fill="none" stroke="#EDE7DC" stroke-width="1"/>
-        <line x1="70" y1="10" x2="70" y2="130" stroke="#EDE7DC" stroke-width="1"/>
-        <line x1="10" y1="70" x2="130" y2="70" stroke="#EDE7DC" stroke-width="1"/>
+      <svg class="act-radar-svg" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+        <!-- グリッド円 -->
+        <circle cx="80" cy="80" r="60" fill="none" stroke="#EDE7DC" stroke-width="1"/>
+        <circle cx="80" cy="80" r="45" fill="none" stroke="#EDE7DC" stroke-width="1"/>
+        <circle cx="80" cy="80" r="30" fill="none" stroke="#EDE7DC" stroke-width="1"/>
+        <circle cx="80" cy="80" r="15" fill="none" stroke="#EDE7DC" stroke-width="1"/>
+        <!-- 軸線 -->
+        <line x1="80" y1="20" x2="80" y2="140" stroke="#EDE7DC" stroke-width="1"/>
+        <line x1="20" y1="80" x2="140" y2="80" stroke="#EDE7DC" stroke-width="1"/>
+        <!-- データポリゴン -->
         <polygon id="actRadarData" points="" fill="rgba(196,168,130,0.25)" stroke="#C4A882" stroke-width="1.5" stroke-linejoin="round"/>
-        <text x="70" y="7" text-anchor="middle" fill="#8B7355" font-size="9" font-family="Zen Kaku Gothic New">人間関係</text>
-        <text x="137" y="73" text-anchor="start" fill="#C4A882" font-size="9" font-family="Zen Kaku Gothic New">余暇</text>
-        <text x="70" y="140" text-anchor="middle" fill="#8BA888" font-size="9" font-family="Zen Kaku Gothic New">仕事</text>
-        <text x="3" y="73" text-anchor="start" fill="#8AAEC4" font-size="9" font-family="Zen Kaku Gothic New">自己</text>
+        <!-- ラベル -->
+        <text x="80" y="15" text-anchor="middle" fill="#8B7355" font-size="9" font-family="Zen Kaku Gothic New">人間関係</text>
+        <text x="148" y="83" text-anchor="start" fill="#C4A882" font-size="9" font-family="Zen Kaku Gothic New">余暇</text>
+        <text x="80" y="155" text-anchor="middle" fill="#8BA888" font-size="9" font-family="Zen Kaku Gothic New">仕事</text>
+        <text x="12" y="83" text-anchor="start" fill="#8AAEC4" font-size="9" font-family="Zen Kaku Gothic New">自己</text>
       </svg>
       <div class="act-radar-legend">
         <div class="act-rl-item">
           <div class="act-rl-meta">
             <div class="act-rl-label"><div class="act-rl-dot" style="background:#8B7355"></div>人間関係</div>
-            <div class="act-rl-val" id="act_rel_val">72</div>
+            <div class="act-rl-val" id="act_rel_val" onclick="editRadarVal('rel')" style="cursor:pointer;border-bottom:1px dotted #ccc;min-width:28px;text-align:right;">72</div>
           </div>
           <div class="act-rl-bar"><div class="act-rl-fill" id="act_rel_fill" style="width:0%;background:#8B7355;transition:width 0.9s ease"></div></div>
         </div>
         <div class="act-rl-item">
           <div class="act-rl-meta">
             <div class="act-rl-label"><div class="act-rl-dot" style="background:#C4A882"></div>余暇</div>
-            <div class="act-rl-val" id="act_lei_val">55</div>
+            <div class="act-rl-val" id="act_lei_val" onclick="editRadarVal('lei')" style="cursor:pointer;border-bottom:1px dotted #ccc;min-width:28px;text-align:right;">55</div>
           </div>
           <div class="act-rl-bar"><div class="act-rl-fill" id="act_lei_fill" style="width:0%;background:#C4A882;transition:width 0.9s ease"></div></div>
         </div>
         <div class="act-rl-item">
           <div class="act-rl-meta">
             <div class="act-rl-label"><div class="act-rl-dot" style="background:#8BA888"></div>仕事</div>
-            <div class="act-rl-val" id="act_wor_val">68</div>
+            <div class="act-rl-val" id="act_wor_val" onclick="editRadarVal('wor')" style="cursor:pointer;border-bottom:1px dotted #ccc;min-width:28px;text-align:right;">68</div>
           </div>
           <div class="act-rl-bar"><div class="act-rl-fill" id="act_wor_fill" style="width:0%;background:#8BA888;transition:width 0.9s ease"></div></div>
         </div>
         <div class="act-rl-item">
           <div class="act-rl-meta">
             <div class="act-rl-label"><div class="act-rl-dot" style="background:#8AAEC4"></div>自己啓発</div>
-            <div class="act-rl-val" id="act_dev_val">60</div>
+            <div class="act-rl-val" id="act_dev_val" onclick="editRadarVal('dev')" style="cursor:pointer;border-bottom:1px dotted #ccc;min-width:28px;text-align:right;">60</div>
           </div>
           <div class="act-rl-bar"><div class="act-rl-fill" id="act_dev_fill" style="width:0%;background:#8AAEC4;transition:width 0.9s ease"></div></div>
         </div>
@@ -990,19 +992,39 @@ function renderActThemeHistory() {
 }
 
 // ACT RADAR
+let radarVals = {rel:72, lei:55, wor:68, dev:60};
+
 function animateACTRadar(){
-  const v={rel:72,lei:55,wor:68,dev:60};
-  document.getElementById('act_rel_fill').style.width=v.rel+'%';
-  document.getElementById('act_lei_fill').style.width=v.lei+'%';
-  document.getElementById('act_wor_fill').style.width=v.wor+'%';
-  document.getElementById('act_dev_fill').style.width=v.dev+'%';
-  const cx=70,cy=70,maxR=56;
-  const top=[cx, cy-maxR*(v.rel/100)];
-  const right=[cx+maxR*(v.lei/100), cy];
-  const bot=[cx, cy+maxR*(v.wor/100)];
-  const left=[cx-maxR*(v.dev/100), cy];
+  const v = radarVals;
+  document.getElementById('act_rel_val').textContent = v.rel;
+  document.getElementById('act_lei_val').textContent = v.lei;
+  document.getElementById('act_wor_val').textContent = v.wor;
+  document.getElementById('act_dev_val').textContent = v.dev;
+  document.getElementById('act_rel_fill').style.width = v.rel+'%';
+  document.getElementById('act_lei_fill').style.width = v.lei+'%';
+  document.getElementById('act_wor_fill').style.width = v.wor+'%';
+  document.getElementById('act_dev_fill').style.width = v.dev+'%';
+  const cx=80, cy=80, maxR=60;
+  const top    = [cx,          cy - maxR*(v.rel/100)];
+  const right  = [cx + maxR*(v.lei/100), cy         ];
+  const bot    = [cx,          cy + maxR*(v.wor/100)];
+  const left   = [cx - maxR*(v.dev/100), cy         ];
   document.getElementById('actRadarData').setAttribute('points',
     `${top[0]},${top[1]} ${right[0]},${right[1]} ${bot[0]},${bot[1]} ${left[0]},${left[1]}`);
+  // localStorage保存
+  localStorage.setItem('myaxis_radar_vals', JSON.stringify(v));
+}
+
+function editRadarVal(key){
+  const labels = {rel:'人間関係', lei:'余暇', wor:'仕事', dev:'自己啓発'};
+  const cur = radarVals[key];
+  const input = prompt(labels[key] + 'のスコアを入力（0〜100）', cur);
+  if(input === null) return;
+  const num = parseInt(input);
+  if(isNaN(num) || num < 0 || num > 100){ showToast('0〜100の数値を入力してください'); return; }
+  radarVals[key] = num;
+  animateACTRadar();
+  showToast('バランスを更新しました 🌿');
 }
 
 // ACT SAVE
@@ -1354,6 +1376,11 @@ function loadFromStorage() {
 // 起動時に読み込む
 loadFromStorage();
 
+// レーダー値を復元
+try {
+  const rv = localStorage.getItem('myaxis_radar_vals');
+  if(rv) radarVals = JSON.parse(rv);
+} catch(e) {}
 </script>
 </body>
 </html>
