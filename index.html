@@ -519,10 +519,22 @@ input[type=range].body::-webkit-slider-thumb{border-color:var(--warm-dark);}
     <div class="date-badge" id="dateBadge4"></div>
   </div>
 
+  <div class="section-row"><div class="section-title">今月のテーマ設定</div></div>
+  <div class="act-theme-set">
+    <div class="act-theme-field">
+      <div class="act-theme-field-label">FOCUS — 今月の重点テーマ</div>
+      <input class="act-theme-input" type="text" id="act_theme_main" value="余暇を意識的に楽しむ" placeholder="今月一番大切にしたいこと…">
+    </div>
+    <div class="act-theme-field">
+      <div class="act-theme-field-label">NEGLECT — 後回しにしていること</div>
+      <input class="act-theme-input" type="text" id="act_theme_ignore" value="体のメンテナンス" placeholder="気づいているけど避けていること…">
+    </div>
+  </div>
+
   <div class="section-row"><div class="section-title">今月のバランス</div><div style="font-size:11px;color:var(--text-light);letter-spacing:0.05em;">数値をタップして編集</div></div>
   <div class="act-radar-card">
     <div class="act-radar-inner">
-      <svg class="act-radar-svg" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+      <svg class="act-radar-svg" viewBox="0 0 180 160" xmlns="http://www.w3.org/2000/svg">
         <!-- グリッド円 -->
         <circle cx="80" cy="80" r="60" fill="none" stroke="#EDE7DC" stroke-width="1"/>
         <circle cx="80" cy="80" r="45" fill="none" stroke="#EDE7DC" stroke-width="1"/>
@@ -535,7 +547,7 @@ input[type=range].body::-webkit-slider-thumb{border-color:var(--warm-dark);}
         <polygon id="actRadarData" points="" fill="rgba(196,168,130,0.25)" stroke="#C4A882" stroke-width="1.5" stroke-linejoin="round"/>
         <!-- ラベル -->
         <text x="80" y="15" text-anchor="middle" fill="#8B7355" font-size="9" font-family="Zen Kaku Gothic New">人間関係</text>
-        <text x="148" y="83" text-anchor="start" fill="#C4A882" font-size="9" font-family="Zen Kaku Gothic New">余暇</text>
+        <text x="143" y="83" text-anchor="start" fill="#C4A882" font-size="9" font-family="Zen Kaku Gothic New">余暇</text>
         <text x="80" y="155" text-anchor="middle" fill="#8BA888" font-size="9" font-family="Zen Kaku Gothic New">仕事</text>
         <text x="12" y="83" text-anchor="start" fill="#8AAEC4" font-size="9" font-family="Zen Kaku Gothic New">自己</text>
       </svg>
@@ -600,17 +612,6 @@ input[type=range].body::-webkit-slider-thumb{border-color:var(--warm-dark);}
         <div class="act-val-name">自己啓発・成長</div>
       </div>
       <textarea class="act-val-input" rows="3" id="act_val_dev" placeholder="どんな自分に成長したい？">心と体を整えながら、自分らしく前に進み続けたい</textarea>
-    </div>
-  </div>
-  <div class="section-row"><div class="section-title">今月のテーマ設定</div></div>
-  <div class="act-theme-set">
-    <div class="act-theme-field">
-      <div class="act-theme-field-label">FOCUS — 今月の重点テーマ</div>
-      <input class="act-theme-input" type="text" id="act_theme_main" value="余暇を意識的に楽しむ" placeholder="今月一番大切にしたいこと…">
-    </div>
-    <div class="act-theme-field">
-      <div class="act-theme-field-label">NEGLECT — 後回しにしていること</div>
-      <input class="act-theme-input" type="text" id="act_theme_ignore" value="体のメンテナンス" placeholder="気づいているけど避けていること…">
     </div>
   </div>
   <div class="act-notif-info">
